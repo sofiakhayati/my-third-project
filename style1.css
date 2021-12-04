@@ -1,0 +1,808 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+/** {
+  box-sizing: border-box;
+}*/
+body {
+  margin: 0 1%;
+  padding: 0;
+  z-index: 1;
+}
+.map-tunisia {
+  position: fixed;
+  z-index: 2;
+  width: 12vw;
+  height: 25vh;
+  top: 25%;
+  left: 1%;
+  border-radius: 70%;
+}
+
+/***************************************               NAVIGATION        ****************************************/
+
+nav {
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 100%;
+  background-color: rgb(138, 138, 56, 0.6);
+  margin-bottom: 2%;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  margin-left: 55%;
+  margin-top: 7%;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+.log {
+  background: rgba(124, 124, 69, 0.795);
+  margin: 2%;
+  line-height: 0.3rem;
+}
+.log > h5 {
+  font-size: 150%;
+  color: white;
+  margin-top: 8%;
+  margin-left: 20%;
+}
+nav img {
+  border-radius: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+nav ul {
+  display: flex;
+  padding-left: 1%;
+  padding-right: 2%;
+  margin-right: 2%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(124, 124, 69, 0.795);
+}
+nav ul li {
+  list-style: none;
+  padding: 0 1%;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 110%;
+  font-weight: bold;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: white;
+  color: rgba(128, 128, 0, 0.795);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 10%;
+  padding: 10px;
+}
+nav .fa,
+nav .fas {
+  margin-right: 8px;
+}
+
+.sub-menu-1 {
+  display: none;
+}
+nav ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+
+  background: rgba(124, 124, 69, 0.795);
+}
+nav ul li:hover .sub-menu-1 ul {
+  position: fixed;
+  z-index: 2;
+  display: block;
+  margin: 2%;
+}
+nav ul li:hover .sub-menu-1 ul li {
+  width: 15vw;
+  padding: 7%;
+  border-bottom: 1px dotted #fff;
+  background: transparent;
+  text-align: left;
+}
+nav ul li:hover .sub-menu-1 ul li:last-child {
+  border-bottom: none;
+}
+nav ul li:hover .sub-menu-1 ul li a:hover {
+  color: rgb(46, 27, 7);
+  background: none;
+}
+
+
+/***********************************************     top container    ************************************/
+
+.top-container {
+  z-index: 1;
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "header header forest"
+    "header header beach"
+    "header header sahara";
+}
+header {
+  grid-area: header;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video {
+  position: relative;
+  max-width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.content {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  right: 3%;
+}
+h1 {
+  font-family: cursive;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1%;
+  color: black;
+  line-height: 5.3rem;
+}
+h4 {
+  font-family: cursive;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  color: black;
+  line-height: 2.3rem;
+}
+h3 {
+  text-align: center;
+}
+
+.btn {
+  background-color: rgba(73, 73, 22, 0.795);
+  color: white;
+  padding: 3%;
+  border-radius: 7px;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: rgba(121, 121, 7, 0.595);
+  font-weight: bolder;
+}
+.forest {
+  grid-area: forest;
+}
+.beach {
+  grid-area: beach;
+}
+.sahara {
+  grid-area: sahara;
+}
+
+.destination,
+.hotel,
+.activities,
+.guide,
+.food-drink,
+.forest,
+.beach,
+.sahara {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3%;
+  margin: 3%;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+/*****************************************      second container    **************************************/
+
+.second-container {
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: repeat(auto-fit, minmax(5%, 1fr));
+  margin-top: 3%;
+}
+.second-containe ~ p {
+  text-align: center;
+}
+
+/*****************************************       gallery      **************************************/
+
+#best-destination {
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: 4fr 1fr;
+  background: url(img/dest.jpg);
+  background-size: cover;
+  margin: 4% 0 11% 0;
+  border-radius: 15%;
+  padding: 5% 0;
+}
+#best-destination > h1 {
+  text-align: center;
+  margin-top: 5%;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+#best-destination > h1:hover {
+  color: rgb(243, 83, 9);
+  text-transform: uppercase;
+}
+#best-destination img {
+  border-radius: 50%;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: inline-block;
+  position: relative;
+  width: 17vw;
+  height: 45vh;
+  margin-bottom: 50px;
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+  -webkit-box-reflect: below 0% linear-gradient
+    (transparent, transparent, #0004);
+}
+.box .text {
+  position: absolute;
+  text-align: center;
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background: rgb(0, 0, 0, 0.4);
+}
+.text h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-style: italic;
+}
+@keyframes animate {
+  0% {
+    transform: perspective(400vh) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(400vh) rotateY(360deg);
+  }
+}
+.box span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17vw;
+  height: 50vh;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 30deg)) translateZ(90vh);
+}
+.box span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/****************************************       services       **********************************/
+.Tunisian-food,
+.Tunisian-hotels {
+  display: block;
+  background: rgb(150, 149, 149);
+  margin-top: 10%;
+  border-radius: 4%;
+  padding: 2%;
+}
+.food-service,
+.drink-service,
+.hotel-service {
+  margin: 4%;
+  display: flex;
+}
+.food-service img,
+.drink-service img,
+.hotel-service img {
+  float: right;
+  border-radius: 10%;
+  margin: 3%;
+}
+.food1,
+.drink1,
+.hotel1 {
+  margin: 2%;
+}
+/****************************************       CONTACT PART       **********************************/
+
+.contact-part {
+  position: relative;
+  width: 86vw;
+  height: 100vh;
+  margin-left: 6%;
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+  background: var(--light);
+  box-shadow: 0px 10px 10px 10px rgb(182, 180, 180),
+    0px 10px 10px 10px rgb(105, 104, 104);
+}
+.map iframe {
+  position: absolute;
+  height: 82vh;
+  width: 36vw;
+  flex: 50%;
+  left: 5%;
+  top: 11%;
+}
+
+.loginbox {
+  position: absolute;
+  height: 82vh;
+  width: 36vw;
+  top: 11%;
+  left: 53%;
+  flex: 50%;
+  background: var(--dark);
+  color: #fff;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 3% 3%;
+}
+.avatar {
+  position: absolute;
+  width: 9vw;
+  height: 18vh;
+  border-radius: 50%;
+  top: -10%;
+  left: 37%;
+  position: absolute;
+}
+.loginbox h2 {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200%;
+  margin-top: 10%;
+  text-align: center;
+}
+.loginbox p {
+  font-weight: bold;
+  font-size: 120%;
+  margin: 0;
+  padding: 0;
+}
+.loginbox input {
+  width: 100%;
+  margin-bottom: 8%;
+}
+.loginbox input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 6vh;
+}
+.loginbox input[type="submit"] {
+  font-size: 150%;
+  border: none;
+  outline: none;
+  height: 8vh;
+  background: darkgreen;
+  color: #fff;
+  border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover {
+  background: mediumblue;
+  color: tomato;
+  cursor: pointer;
+}
+.loginbox a {
+  font-size: 110%;
+  color: darkgrey;
+  line-height: 1.5rem;
+  text-decoration: none;
+}
+.loginbox a:hover {
+  color: darkblue;
+}
+
+/***********************************************      FOOTER        *************************************/
+
+footer {
+  margin-top: 8%;
+  padding: 4rem 0;
+  border-top: 2px solid #999999;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  color: #999999;
+  text-align: center;
+}
+footer div {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4%;
+}
+footer i {
+  margin-right: 1%;
+}
+
+#heart:hover {
+  color: red;
+}
+#mail:hover {
+  color: brown;
+}
+#facebook:hover {
+  color: rgb(88, 115, 194);
+}
+#twitter:hover {
+  color: rgba(57, 95, 219, 0.6);
+}
+#liknedin:hover {
+  color: rgb(139, 139, 216);
+}
+#github:hover {
+  color: black;
+}
+#instagram:hover {
+  color: rgb(100, 30, 30, 0.9);
+}
+
+/********************************************   Responsive WEB PAGE   ******************************/
+/********************************************   BREAKPOINT 1   ******************************/
+
+@media screen and (max-width: 1300px) {
+  .box span {
+    transform: rotateY(calc(var(--i) * 30deg)) translateZ(65vh);
+  }
+  .box .text {
+    top: 30%;
+  }
+  .second-container h2 {
+    font-size: 120%;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    text-transform: none;
+    padding: 3px;
+  }
+}
+
+/********************************************   BREAKPOINT 2   ******************************/
+
+@media screen and (max-width: 900px) {
+  .box .text {
+    top: 10%;
+  }
+  .map-tunisia {
+    width: 15vw;
+    height: 16vh;
+    top: 25%;
+    left: 1%;
+  }
+  .log > h5 {
+    font-size: 100%;
+    margin-left: 23%;
+  }
+  nav .fa,
+  nav .fas {
+    margin-right: 1px;
+  }
+  nav ul {
+    padding-right: 1%;
+  }
+  nav ul li a {
+    font-size: 90%;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    text-transform: none;
+    padding: 3px;
+  }
+  nav ul li:hover .sub-menu-1 ul li {
+    width: 20vw;
+    padding: 5%;
+  }
+
+  .second-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .destination {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 1;
+  }
+  .hotel {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 1;
+  }
+  .activities {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row: 2;
+  }
+  .guide {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 3;
+  }
+  .food-drink {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 3;
+  }
+  .box span {
+    transform: rotateY(calc(var(--i) * 40deg)) translateX(35vh);
+  }
+  .box .text h1 {
+    font-size: 130%;
+  }
+  .loginbox h2 {
+    margin-top: 19%;
+  }
+}
+
+/********************************************   BREAKPOINT 3   ******************************/
+@media (max-width: 620px) {
+  .map-tunisia {
+    width: 20vw;
+    height: 25vh;
+    top: 12%;
+    left: 2%;
+  }
+  nav {
+    grid-template-columns: 1.5fr 0.5fr;
+    grid-template-rows: 150px;
+  }
+
+  .log > h5 {
+    font-size: 150%;
+    margin-top: 3%;
+    margin-left: 35%;
+  }
+  nav img {
+    margin-left: 37%;
+    margin-top: 1%;
+  }
+
+  nav ul {
+    display: block;
+    padding: 2%;
+
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(153, 92, 86);
+    top: 23px;
+    right: -100%;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    list-style: none;
+    padding: 8% 0;
+  }
+  nav ul li a {
+    font-size: 90%;
+  }
+  nav .fa,
+  nav .fas {
+    margin-right: 4px;
+  }
+
+  nav ul li:hover .sub-menu-1 {
+    display: block;
+    left: -40%;
+    position: absolute;
+  }
+  nav ul li:hover .sub-menu-1 ul {
+    position: absolute;
+    top: 0;
+  }
+
+  nav ul li:hover .sub-menu-1 ul li {
+    width: 40vw;
+    height: 10vh;
+    text-align: center;
+    border-bottom-color: black;
+    background: rgb(212, 160, 160);
+  }
+  nav ul li:hover .sub-menu-1 ul li:hover {
+    background: rgba(124, 124, 69, 0.795);
+  }
+  nav ul li:hover .sub-menu-1 ul li a {
+    color: black;
+  }
+  nav ul li:hover .sub-menu-1 ul li a:hover {
+    color: white;
+  }
+  .checkbtn {
+    display: block;
+  }
+  #check {
+    display: none;
+  }
+  #check:checked ~ ul {
+    right: -75%;
+  }
+  /**************************************/
+
+  .top-container {
+    z-index: 1;
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr repeat(3, 1fr);
+    grid-template-areas:
+      "header"
+      "forest"
+      "beach"
+      "sahara";
+  }
+
+  /*****************************************/
+  .destination {
+    grid-area: Destination;
+  }
+  .hotel {
+    grid-area: Hotel;
+  }
+  .activities {
+    grid-area: Activity;
+  }
+  .guide {
+    grid-area: Guide;
+  }
+  .food-drink {
+    grid-area: Food;
+  }
+
+  .second-container {
+    margin-top: 3%;
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "Destination"
+      "Hotel"
+      "Activity"
+      "Guide"
+      "Food";
+  }
+
+  /*****************************************/
+
+  #best-destination {
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+  }
+  #best-destination > h1 {
+    margin-top: 35%;
+    font-size: x-large;
+  }
+
+  #best-destination img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+    margin-top: 5%;
+  }
+
+  .box .text {
+    width: 60vw;
+    top: 50%;
+  }
+
+  @keyframes animate {
+    100% {
+      transform: perspective(400vh) rotateY(360deg);
+    }
+  }
+  .box span {
+    width: 40vw;
+    transform: rotateY(calc(var(--i) * 30deg)) translateZ(90vh);
+  }
+  .box span img {
+    width: 150%;
+  }
+
+  /****************************************/
+  .Tunisian-food,
+  .Tunisian-hotels {
+    width: 87vw;
+    margin-left: 3%;
+  }
+  .food-service,
+  .drink-service,
+  .hotel-service {
+    display: inline-block;
+  }
+
+  .food1,
+  .drink1,
+  .hotel1 {
+    margin: 2%;
+    background: lemonchiffon;
+    border-radius: 4%;
+    margin-top: 5%;
+    padding: 4%;
+  }
+  .drink1,
+  .hotel1 {
+    height: 45vh;
+  }
+  /****************************************/
+
+  .contact-part {
+    width: 80vw;
+    height: 165vh;
+    margin-left: 6%;
+    margin-top: 20%;
+  }
+  .map iframe {
+    height: 70vh;
+    width: 70vw;
+    left: 6%;
+    top: 2%;
+  }
+
+  .loginbox {
+    height: 79vh;
+    width: 70vw;
+    top: 50%;
+    left: 6%;
+    flex: 50%;
+  }
+  /****************************************/
+  footer {
+    margin-top: 12%;
+    padding-right: 25px;
+  }
+  footer #mail {
+    margin-top: 40px;
+  }
+}
